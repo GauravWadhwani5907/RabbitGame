@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script>
-    function start() {
-  hideTitleScreen();
-  setBackgroundImageAs("rainbow");
-  makeNewSpriteAnon("brown bunny", locationAt(100, 100));
-}
-
-function carrot() {
-  makeNewSpriteAnon("carrot", randomLocation());
-}
-
 function eat() {
   jumpTo(({costume: "brown bunny"}), locationOf(({costume: "carrot"})));
   changePropBy(({costume: "brown bunny"}), "scale", 10);
@@ -28,6 +6,16 @@ function eat() {
     spriteSay(({costume: "brown bunny"}), "I am full please Restart");
     setProp(({costume: "brown bunny"}), "scale", 100);
   }
+}
+
+function carrot() {
+  makeNewSpriteAnon("carrot", randomLocation());
+}
+
+function start() {
+  hideTitleScreen();
+  setBackgroundImageAs("rainbow");
+  makeNewSpriteAnon("brown bunny", locationAt(100, 100));
 }
 
 function math_random_int(a, b) {
@@ -213,5 +201,3 @@ keyPressed("when", "up", function () {
 keyPressed("when", "right", function () {
   eat();
 });
-</script>
-</html>
